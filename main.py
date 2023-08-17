@@ -143,7 +143,7 @@ if peso_total > 3000:
     print("Contenedor no enviado")
   else:
     print("Error en el sistema")
-print(peso_total)'''
+print(peso_total)
 
 #ejercicio 17
 ca= 0
@@ -151,6 +151,66 @@ i1= 0
 i2= 0
 i3= 0
 
-ca= float(input(""))
+ca= float(input(""))'''
+
+#Ejercicio funciones1
+'''n1=0
+n2=0
+n1=int(input("Deme un n1: "))
+n2=int(input("Deme un n2: "))'''
+def suma(a,b):
+  sum=(a+b)
+  print("La suma de sus numeros es",sum)
 
 
+#Ejercicio funciones2
+'''n1=0
+n2=0
+n1=int(input("Deme un n1: "))
+n2=int(input("Deme un n2: "))'''
+def resta(a,b):
+  minus=(a-b)
+  print("La resta de sus numeros es",minus)
+
+
+#Ejercicio funciones3
+'''n1=0
+n2=0
+n1=int(input("Ponga su numero: "))
+n2=int(input("Ponga su otro numero: "))'''
+def times(a,b):
+  x=(a*b)
+  print("La multiplicacion de sus numeroses",x)
+
+
+#Ejercicio funciones4
+'''n1=0
+n2=0
+n1=int(input("Ponga numero entero: "))
+n2=int(input("Ponga su otro numero entero: "))'''
+def division(a,b):
+  if b==0:
+    print("No se puede dividir por 0 huevon")
+  else:
+    divide=(a/b)
+    print("La division de sus numeros es",divide)
+
+#Ejercicio funciones5
+n1=0
+n2=0
+n1=int(input("Que numero quiere calculado: "))
+n2=int(input("Que numero quiere calculado: "))
+def calculadora(a,b):
+  P=input("Que quieres hacer con esos dos numeros: ")
+  if P=="suma":
+    suma(n1,n2)
+  elif P=="resta":
+    resta(n1,n2)
+  elif P=="multiplicacion":
+    times(n1,n2)
+  elif P=="division":
+    division(n1,n2)
+  else:
+    print("Chupemela soy una calculadora, le pedi algun calculo")
+  
+calculadora(n1,n2)
