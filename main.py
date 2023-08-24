@@ -151,43 +151,43 @@ i1= 0
 i2= 0
 i3= 0
 
-ca= float(input(""))'''
+ca= float(input(""))
 
 #Ejercicio funciones1
-'''n1=0
+n1=0
 n2=0
 n1=int(input("Deme un n1: "))
-n2=int(input("Deme un n2: "))'''
+n2=int(input("Deme un n2: "))
 def suma(a,b):
   sum=(a+b)
   print("La suma de sus numeros es",sum)
 
 
 #Ejercicio funciones2
-'''n1=0
+n1=0
 n2=0
 n1=int(input("Deme un n1: "))
-n2=int(input("Deme un n2: "))'''
+n2=int(input("Deme un n2: "))
 def resta(a,b):
   minus=(a-b)
   print("La resta de sus numeros es",minus)
 
 
 #Ejercicio funciones3
-'''n1=0
+n1=0
 n2=0
 n1=int(input("Ponga su numero: "))
-n2=int(input("Ponga su otro numero: "))'''
+n2=int(input("Ponga su otro numero: "))
 def times(a,b):
   x=(a*b)
   print("La multiplicacion de sus numeroses",x)
 
 
 #Ejercicio funciones4
-'''n1=0
+n1=0
 n2=0
 n1=int(input("Ponga numero entero: "))
-n2=int(input("Ponga su otro numero entero: "))'''
+n2=int(input("Ponga su otro numero entero: "))
 def division(a,b):
   if b==0:
     print("No se puede dividir por 0 huevon")
@@ -214,3 +214,80 @@ def calculadora(a,b):
     print("Chupemela soy una calculadora, le pedi algun calculo")
   
 calculadora(n1,n2)
+
+#Ejercicio 6
+def intereses(int):
+  d= int
+  if(d>0 and d<1000000):
+    return 2
+  elif(d>=1000000 and d<2000000):
+    return 5
+  else:
+    return 7
+
+def calBalance(int, inv):
+  n= int
+  d= inv
+  return round((d*(1+(n/100))),2)
+
+def ctaAhorro():
+  inversion= float(input("Ingrese el valor de la inversion: "))
+  interes=intereses(inversion)
+  b1=calBalance(interes, inversion)
+  b2=calBalance(interes, b1)
+  b3=calBalance(interes, b2)
+  print("balance 1: ",b1,"balance 2: ",b2,"balance 3: ",b3)
+
+ctaAhorro()'''
+
+def areaT(a,b):
+  return(b*a)/2
+
+def areaC1(ac,bc):
+  return ac*bc
+
+def areaC2(r):
+  return(3,14*(r**2))
+
+def areaP(p,a):
+  return(p*a)/2
+
+def areaR(x,y):
+  return(x*y)/2
+  
+def areasFig():
+  m= int(input("""Que opcion desea: 
+                1:triangulo
+                2:cuadrado
+                3:circulo
+                4:pentagono regular
+                5:rombo """))
+
+  if m==1:
+    base=float(input("Ingrese su base: "))
+    altura=float(input("Ingrese su altura: "))
+    Triangulo= areaT(altura, base)
+    print("Su area es: ",Triangulo)
+  elif m==2:
+    lado1=float(input("Ingrese el primer lado: "))
+    lado2=float(input("Ingrese el segundo lado: "))
+    cuadrado=areaC1(lado1, lado2)
+    print("Su area es: ",cuadrado)
+
+  elif m==3:
+    radio=float(input("Ingrese el radio: "))
+    circulo=areaC2(radio)
+    print("Su area es: ",circulo)
+    
+  elif m==4:
+    perimetro=float(input("Ingrese el perimetro: "))
+    apotema=float(input("Ingrese el apotema: "))
+    pentagono=areaP(perimetro, apotema)
+    print("Su area es: ",pentagono)
+
+  elif m==5:
+    a=float(input("Ingrese el diagonal mayor: "))
+    b=float(input("Ingrese diagnoal menor: "))
+    rombo=areaR(a,b)
+    print("Su area es: ",rombo)
+areasFig()
