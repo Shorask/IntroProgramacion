@@ -238,8 +238,8 @@ def ctaAhorro():
   b3=calBalance(interes, b2)
   print("balance 1: ",b1,"balance 2: ",b2,"balance 3: ",b3)
 
-ctaAhorro()'''
-
+ctaAhorro()
+#Ejercicio 7
 def areaT(a,b):
   return(b*a)/2
 
@@ -268,6 +268,7 @@ def areasFig():
     altura=float(input("Ingrese su altura: "))
     Triangulo= areaT(altura, base)
     print("Su area es: ",Triangulo)
+  
   elif m==2:
     lado1=float(input("Ingrese el primer lado: "))
     lado2=float(input("Ingrese el segundo lado: "))
@@ -291,3 +292,235 @@ def areasFig():
     rombo=areaR(a,b)
     print("Su area es: ",rombo)
 areasFig()
+
+def maximo(a,b):
+  if x>y:
+    return x
+  else:
+    return y
+
+def minimo(a,b):
+  if x<y:
+    return x
+  else:
+    return y
+
+x=int(input("Numero: "))
+y=int(input("Otro numero"))
+print(maximo(x-3, minimo(x+2,y-5)))
+#MALA PRACTICA VARIABLES GLOBALES
+
+# Función para verificar si un año es bisiesto
+def es_bisiesto(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    else:
+        return False
+
+# Función principal del programa
+def main():
+    # Solicitar al usuario que ingrese un año
+    year = int(input("Ingrese un año: "))
+
+    # Llamar a la función es_bisiesto para determinar si el año es bisiesto
+    if es_bisiesto(year):
+        print(f"{year} es bisiesto")
+    else:
+        print(f"{year} no es bisiesto")
+
+
+main()
+
+# Función para determinar el tamaño del perro
+def determinar_tamano(altura, peso):
+    if altura <= 30:
+        if peso <= 15:
+            return "Pequeño"
+    elif 30 < altura <= 40:
+        if 15 <= peso <= 25:
+            return "Mediano"
+    elif 40 < altura <= 60:
+        if 25 <= peso <= 45:
+            return "Grande"
+    return "Desconocido"
+
+# Función principal del programa
+def main():
+    # Solicitar altura y peso al usuario
+    altura = float(input("Ingrese la altura del perro (en cm): "))
+    peso = float(input("Ingrese el peso del perro (en kg): "))
+
+    # Determinar el tamaño del perro utilizando la función
+    tamano = determinar_tamano(altura, peso)
+
+    # Mostrar el resultado
+    print(f"Tamaño del perro: {tamano}")
+
+main()
+
+# Función para convertir de Celsius a Fahrenheit
+def celsius_a_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+# Función para convertir de Celsius a Kelvin
+def celsius_a_kelvin(celsius):
+    return celsius + 273.15
+
+# Función para convertir de Fahrenheit a Celsius
+def fahrenheit_a_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+# Función para convertir de Fahrenheit a Kelvin
+def fahrenheit_a_kelvin(fahrenheit):
+    celsius = fahrenheit_a_celsius(fahrenheit)
+    return celsius_a_kelvin(celsius)
+
+# Función para convertir de Kelvin a Celsius
+def kelvin_a_celsius(kelvin):
+    return kelvin - 273.15
+
+# Función para convertir de Kelvin a Fahrenheit
+def kelvin_a_fahrenheit(kelvin):
+    celsius = kelvin_a_celsius(kelvin)
+    return celsius_a_fahrenheit(celsius)
+
+# Función principal del programa
+def main():
+    temperatura = float(input("Ingrese la temperatura: "))
+    escala_actual = input("Ingrese la escala actual (K, C, F): ").upper()
+    escala_deseada = input("Ingrese la escala a la que se desea convertir (K, C, F): ").upper()
+
+    if escala_actual == escala_deseada:
+        print(f"La temperatura es {temperatura} {escala_actual}")
+    else:
+        if escala_actual == "C" and escala_deseada == "F":
+            resultado = celsius_a_fahrenheit(temperatura)
+        elif escala_actual == "C" and escala_deseada == "K":
+            resultado = celsius_a_kelvin(temperatura)
+        elif escala_actual == "F" and escala_deseada == "C":
+            resultado = fahrenheit_a_celsius(temperatura)
+        elif escala_actual == "F" and escala_deseada == "K":
+            resultado = fahrenheit_a_kelvin(temperatura)
+        elif escala_actual == "K" and escala_deseada == "C":
+            resultado = kelvin_a_celsius(temperatura)
+        elif escala_actual == "K" and escala_deseada == "F":
+            resultado = kelvin_a_fahrenheit(temperatura)
+        else:
+            print("Las escalas ingresadas no son válidas.")
+            return
+
+        print(f"La temperatura convertida es {resultado:.2f} {escala_deseada}")
+
+
+main()
+
+# Función para determinar el grupo y calcular el costo con descuento
+def determinar_grupo_y_costo(nombre, edad):
+    if 10 <= edad <= 17:
+        grupo = "Niños"
+        costo = 25000
+        if edad > 13:
+            costo = costo - (costo * 0.08)
+        else:
+            costo = costo - (costo * 0.15)
+    elif 18 <= edad <= 50:
+        grupo = "Adultos"
+        costo = 35000
+        if edad > 30:
+            costo = costo - (costo * 0.09)
+        else:
+            costo = costo - (costo * 0.11)
+    elif edad > 50:
+        grupo = "Adulto Mayor"
+        costo = 50000
+        if edad > 65:
+            costo = costo - (costo * 0.40)
+    else:
+        grupo = "No es elegible para ningún grupo"
+        costo = 0
+
+    print(f"Nombre: {nombre}")
+    print(f"Grupo: {grupo}")
+    print(f"Valor del grupo: {costo:.2f} pesos")
+    if costo > 0:
+        print(f"Valor a pagar con descuento aplicado: {(costo):.2f} pesos")
+
+# Función principal del programa
+def main():
+    nombre = input("Ingrese el nombre del participante: ")
+    edad = int(input("Ingrese la edad del participante: "))
+
+    determinar_grupo_y_costo(nombre, edad)
+
+
+main()
+
+
+
+# Función para calcular el volumen del cubo
+def calcular_volumen_cubo(lado):
+    volumen = lado ** 3
+    return volumen
+
+# Función para calcular el volumen del cilindro
+def calcular_volumen_cilindro(radio, altura):
+    volumen = math.pi * radio ** 2 * altura
+    return volumen
+
+# Función para calcular el volumen de la esfera
+def calcular_volumen_esfera(radio):
+    volumen = (4/3) * math.pi * radio ** 3
+    return volumen
+
+# Función principal del programa
+def main():
+    tipo_recipiente = input("Ingrese el tipo de recipiente (Cubo, Cilindro o Esfera): ").lower()
+
+    if tipo_recipiente == "cubo":
+        lado = float(input("Ingrese la longitud del lado del cubo: "))
+        volumen = calcular_volumen_cubo(lado)
+        print(f"El volumen del cubo es: {volumen:.3f} unidades cúbicas")
+    elif tipo_recipiente == "cilindro":
+        radio = float(input("Ingrese el radio del cilindro: "))
+        altura = float(input("Ingrese la altura del cilindro: "))
+        volumen = calcular_volumen_cilindro(radio, altura)
+        print(f"El volumen del cilindro es: {volumen:.3f} unidades cúbicas")
+    elif tipo_recipiente == "esfera":
+        radio = float(input("Ingrese el radio de la esfera: "))
+        volumen = calcular_volumen_esfera(radio)
+        print(f"El volumen de la esfera es: {volumen:.3f} unidades cúbicas")
+    else:
+        print("Tipo de recipiente no válido.")
+
+
+main()
+
+# Función para calcular cuántas cajas se necesitan
+def calcular_cajas(cantidad_cubos, tipo_caja):
+    if tipo_caja == "pequeña":
+        capacidad_caja = 5  # Litros
+    elif tipo_caja == "mediana":
+        capacidad_caja = 7  # Litros
+    elif tipo_caja == "grande":
+        capacidad_caja = 10  # Litros
+    elif tipo_caja == "extragrande":
+        capacidad_caja = 15  # Litros
+    else:
+        print("Tipo de caja no válido.")
+        return
+
+    cajas_requeridas = cantidad_cubos / (capacidad_caja * 0.001)  # Conversión de litros a cm cúbicos
+    return int(cajas_requeridas)
+
+# Función principal del programa
+def main():
+    cantidad_cubos = int(input("Ingrese la cantidad de cubos de Rubik a enviar: "))
+    tipo_caja = input("Ingrese el tipo de caja (Pequeña, Mediana, Grande o Extragrande): ").lower()
+
+    cajas_necesarias = calcular_cajas(cantidad_cubos, tipo_caja)
+
+    if cajas_necesarias is not None:
+        print(f"Se necesitan {cajas_necesarias} cajas {tipo_caja} para el envío.")
+
+
+main()'''
