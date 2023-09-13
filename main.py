@@ -310,19 +310,20 @@ y=int(input("Otro numero"))
 print(maximo(x-3, minimo(x+2,y-5)))
 #MALA PRACTICA VARIABLES GLOBALES
 
-# Función para verificar si un año es bisiesto
-def es_bisiesto(year):
-    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+#Ejercicio1
+
+def es_bisiesto(año):
+    if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
         return True
     else:
         return False
 
-# Función principal del programa
+
 def main():
     # Solicitar al usuario que ingrese un año
     year = int(input("Ingrese un año: "))
 
-    # Llamar a la función es_bisiesto para determinar si el año es bisiesto
+    
     if es_bisiesto(year):
         print(f"{year} es bisiesto")
     else:
@@ -331,7 +332,8 @@ def main():
 
 main()
 
-# Función para determinar el tamaño del perro
+#Ejercicio2
+
 def determinar_tamano(altura, peso):
     if altura <= 30:
         if peso <= 15:
@@ -344,21 +346,22 @@ def determinar_tamano(altura, peso):
             return "Grande"
     return "Desconocido"
 
-# Función principal del programa
+
 def main():
-    # Solicitar altura y peso al usuario
+  
     altura = float(input("Ingrese la altura del perro (en cm): "))
     peso = float(input("Ingrese el peso del perro (en kg): "))
 
-    # Determinar el tamaño del perro utilizando la función
+    
     tamano = determinar_tamano(altura, peso)
 
-    # Mostrar el resultado
+    
     print(f"Tamaño del perro: {tamano}")
 
 main()
 
-# Función para convertir de Celsius a Fahrenheit
+#Ejercicio3
+
 def celsius_a_fahrenheit(celsius):
     return (celsius * 9/5) + 32
 
@@ -366,25 +369,25 @@ def celsius_a_fahrenheit(celsius):
 def celsius_a_kelvin(celsius):
     return celsius + 273.15
 
-# Función para convertir de Fahrenheit a Celsius
+
 def fahrenheit_a_celsius(fahrenheit):
     return (fahrenheit - 32) * 5/9
 
-# Función para convertir de Fahrenheit a Kelvin
+
 def fahrenheit_a_kelvin(fahrenheit):
     celsius = fahrenheit_a_celsius(fahrenheit)
     return celsius_a_kelvin(celsius)
 
-# Función para convertir de Kelvin a Celsius
+
 def kelvin_a_celsius(kelvin):
     return kelvin - 273.15
 
-# Función para convertir de Kelvin a Fahrenheit
+
 def kelvin_a_fahrenheit(kelvin):
     celsius = kelvin_a_celsius(kelvin)
     return celsius_a_fahrenheit(celsius)
 
-# Función principal del programa
+
 def main():
     temperatura = float(input("Ingrese la temperatura: "))
     escala_actual = input("Ingrese la escala actual (K, C, F): ").upper()
@@ -414,7 +417,8 @@ def main():
 
 main()
 
-# Función para determinar el grupo y calcular el costo con descuento
+#Ejercicio4
+
 def determinar_grupo_y_costo(nombre, edad):
     if 10 <= edad <= 17:
         grupo = "Niños"
@@ -445,7 +449,7 @@ def determinar_grupo_y_costo(nombre, edad):
     if costo > 0:
         print(f"Valor a pagar con descuento aplicado: {(costo):.2f} pesos")
 
-# Función principal del programa
+
 def main():
     nombre = input("Ingrese el nombre del participante: ")
     edad = int(input("Ingrese la edad del participante: "))
@@ -456,23 +460,23 @@ def main():
 main()
 
 
+#Ejercicio5
 
-# Función para calcular el volumen del cubo
 def calcular_volumen_cubo(lado):
     volumen = lado ** 3
     return volumen
 
-# Función para calcular el volumen del cilindro
+
 def calcular_volumen_cilindro(radio, altura):
     volumen = math.pi * radio ** 2 * altura
     return volumen
 
-# Función para calcular el volumen de la esfera
+
 def calcular_volumen_esfera(radio):
     volumen = (4/3) * math.pi * radio ** 3
     return volumen
 
-# Función principal del programa
+
 def main():
     tipo_recipiente = input("Ingrese el tipo de recipiente (Cubo, Cilindro o Esfera): ").lower()
 
@@ -495,24 +499,26 @@ def main():
 
 main()
 
-# Función para calcular cuántas cajas se necesitan
+#Ejercicio6
+
+
 def calcular_cajas(cantidad_cubos, tipo_caja):
     if tipo_caja == "pequeña":
-        capacidad_caja = 5  # Litros
+        capacidad_caja = 5  
     elif tipo_caja == "mediana":
-        capacidad_caja = 7  # Litros
+        capacidad_caja = 7  
     elif tipo_caja == "grande":
-        capacidad_caja = 10  # Litros
+        capacidad_caja = 10  
     elif tipo_caja == "extragrande":
-        capacidad_caja = 15  # Litros
+        capacidad_caja = 15  
     else:
         print("Tipo de caja no válido.")
         return
 
-    cajas_requeridas = cantidad_cubos / (capacidad_caja * 0.001)  # Conversión de litros a cm cúbicos
+    cajas_requeridas = cantidad_cubos / (capacidad_caja * 0.001)  
     return int(cajas_requeridas)
 
-# Función principal del programa
+
 def main():
     cantidad_cubos = int(input("Ingrese la cantidad de cubos de Rubik a enviar: "))
     tipo_caja = input("Ingrese el tipo de caja (Pequeña, Mediana, Grande o Extragrande): ").lower()
@@ -523,4 +529,139 @@ def main():
         print(f"Se necesitan {cajas_necesarias} cajas {tipo_caja} para el envío.")
 
 
-main()'''
+main()
+
+#PARCIALEJERCICIO1
+
+# Calculamos que interes se usa
+def interes(int):
+  d= int
+  if(d>0 and d<1000000):
+    return 2
+  elif(d>=1000000 and d<2000000):
+    return 5
+  else:
+    return 7
+
+# Funcion para calcular el balance
+def calBalance(int, inv):
+  n= int
+  d= inv
+  return round((d*(1+(n/100))),2)
+
+# Funcion Pricipal
+def ctaAhorro():
+  inversion= float(input("Ingrese el valor de la inversion: "))
+  intereses=interes(inversion)
+  balAño1=calBalance(intereses, inversion)
+  balAño2=calBalance(intereses, balAño1)
+  balAño3=calBalance(intereses, balAño2)
+  print("Balance del primer año:" ,balAño1, ", balance del segundo año: ",balAño2," y balance del tercer año: ",balAño3)
+  
+  
+ctaAhorro()
+
+#PARCIALEJERCICIO2
+def porcentaje(w,z):
+
+    return (w*(1+(z/100)))
+
+ 
+
+w=int(input("Ingrese valor: "))
+
+z=int(input("Ingrese porcentaje: "))
+
+print(round(porcentaje(w-20000, z+2),2))
+
+def descJamon(j):
+  j=0
+  if j==2:
+    return 7000*(1+(2/100))
+  elif j>2 and j<5:
+    return 7000*(1+(5/100))
+  else:
+    return 7000
+
+
+def descArepas(arepa):
+  if arepa >=1:
+    return 6000*(1+(2/100))
+  else:
+    print ("No hay descuento del 2%")
+
+def descTotal(total):
+  total*(1+(2/100))
+
+def main():
+  jamon=0
+  arepa=0
+  pantajado=0
+
+A=0
+while A<10:
+  print (A)
+  A=A+1'''
+
+#Ejercicio Ciclos1
+
+
+def suma(n1,n2):
+  sum=n1+n2
+  print("La suma de sus dos numeros es: ",sum)
+
+
+
+def resta(a,b):
+  minus=(a-b)
+  print("La resta de sus numeros es",minus)
+
+
+
+def times(a,b):
+  x=(a*b)
+  print("La multiplicacion de sus numeroses",x)
+
+
+
+def division(a,b):
+  if b==0:
+    print("No se puede dividir por 0 huevon")
+  else:
+    divide=(a/b)
+    print("La division de sus numeros es",divide)
+
+m=0
+m1=0
+
+
+
+def calculadora():
+  m=0
+  m1=0
+  P=0
+  while P!=5:
+    
+    P=int(input('''Que calculo quieres: 
+  1:suma 
+  2:resta 
+  3:multiplicacion 
+  4:division 
+  5:Fin '''))
+    m=int(input("Dame un numero: "))
+    m1=int(input("Dame otro numero: "))
+     
+    if P==1:
+      suma(m,m1)
+    elif P==2:
+      resta(m,m1)
+    elif P==3:
+      times(m,m1)
+    elif P==4:
+      division(m,m1)
+    elif P==5:
+      print("Gracias por usar la calculadora")
+    else:
+      print("Chupemela soy una calculadora, le pedi              algun calculo")
+    
+calculadora()
