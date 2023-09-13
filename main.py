@@ -601,7 +601,7 @@ def main():
 A=0
 while A<10:
   print (A)
-  A=A+1'''
+  A=A+1
 
 #Ejercicio Ciclos1
 
@@ -642,12 +642,12 @@ def calculadora():
   P=0
   while P!=5:
     
-    P=int(input('''Que calculo quieres: 
+    P=int(input(Que calculo quieres: 
   1:suma 
   2:resta 
   3:multiplicacion 
   4:division 
-  5:Fin '''))
+  5:Fin ))
     m=int(input("Dame un numero: "))
     m1=int(input("Dame otro numero: "))
      
@@ -665,3 +665,44 @@ def calculadora():
       print("Chupemela soy una calculadora, le pedi              algun calculo")
     
 calculadora()
+
+import random
+def rng():
+  RNG=random.randint(1,100)
+  adivinado=False
+  
+  while not adivinado:
+    intento = int(input("Adivina el numero: "))
+    if intento == RNG:
+      print("Numero correcto, ¡Felicidades!")
+      adivinado = True
+    elif intento < RNG:
+      print("El numero es mayor que eso.")
+    else:
+      print("El numero es menor que eso.")
+
+rng()
+
+def tablas():
+  numero= int(input("Que tabla de multiplicacion quiere ver: "))
+  for i in range (1,11):
+    result= numero * i
+    print(numero,"x", i, "=",result)
+tablas()'''
+
+def factorialN():
+  
+  n=int(input("Que numero quiere factorial: "))
+  factorial = 1
+
+  if n<0:
+    print("No hay factorial de numeros negativos")
+  elif n==0:
+    print("El factorial de 0 es 1")
+  else:
+    for i in range(1,n+1):
+      factorial*=i
+      
+  print("El factorial de",n,"es",factorial)
+
+factorialN()
