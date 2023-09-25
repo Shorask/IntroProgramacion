@@ -688,7 +688,7 @@ def tablas():
   for i in range (1,11):
     result= numero * i
     print(numero,"x", i, "=",result)
-tablas()'''
+tablas()
 
 def factorialN():
   
@@ -706,3 +706,54 @@ def factorialN():
   print("El factorial de",n,"es",factorial)
 
 factorialN()
+
+def palabras():
+  palabra = input("Ingrese su palabra aqui: ")
+  for npalabra in palabra:
+    print(npalabra)
+
+palabras()
+
+#LISTAS1
+def lista():
+  lista=[]
+  lista2=[]
+  for l in range(1,6):
+    lista.append(input("Agrega un caracter para la lista: "))
+  lista2=lista
+  lista2.reverse()
+  for j in lista2:
+    print(j)
+lista()
+
+#LISTA2
+def list():
+  lista=[]
+  
+  import random
+  for i in range (11): 
+    RNG=random.randint(1,10)
+    lista.append(RNG)
+  print(lista)  
+  
+  for j in lista:
+    print("Para el numero",j," su cuadrado es: ",j**2," y su cubo es: ",j**3)
+  
+list()
+
+def list():
+  lista_notas=[]
+  for i in range(1,6):
+    lista_notas.append(input("Ingrese sus notas: "))
+
+  
+  suma = 0
+  for valor in lista_notas:
+    suma = suma + int(valor)
+
+  cantidad = len(lista_notas)
+  avg = suma/cantidad
+  for l in lista_notas:
+      print("La lista de sus notas es: ",lista_notas," la nota   promedio es: ",avg," su nota mas alta es: ",max(l)," y su nota menor es: ",min(l))
+
+list()'''
