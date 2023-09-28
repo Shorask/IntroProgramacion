@@ -756,4 +756,98 @@ def list():
   for l in lista_notas:
       print("La lista de sus notas es: ",lista_notas," la nota   promedio es: ",avg," su nota mas alta es: ",max(l)," y su nota menor es: ",min(l))
 
+list()
+
+#LISTAS3
+def list():
+  list_numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  list_numbers.reverse()
+  print(*list_numbers, sep=', ')
 list()'''
+'''
+#LISTAS4
+def notas():
+  asignaturas = ["Matematicas", "Fisica", "Quimica", "Historia", "Lengua"]
+  a=True
+  for l in range(0, len(asignaturas)+1, 1):
+    print(l)
+      
+    while a:
+      notas=float(input("Nota que saco para "+ asignaturas[l]+": "))
+      print(l)
+      if(notas < 0.0 or notas > 5.0):
+        print(l)
+        print("Las notas tienen que ser mayor que 0 y menor que 5")
+        print(l)
+      else:
+        a=False
+      
+        
+        
+    
+      
+      
+        
+        
+      
+      #notas=float(input("Nota que saco para "+ asignaturas[l]+": "))
+      if notas < 3:
+        asignaturas.pop(l)
+      
+    
+    
+  print("Las materias que ganaste son: " + str(asignaturas))
+          
+notas()'''
+
+
+
+#SOLUCION DE MI HERMANO (NO ENTENDI NADA)
+def notas():
+  asignaturas = ["Matematicas", "Fisica", "Quimica", "Historia", "Lengua"]
+  notas_asignaturas = []  
+  asignaturas_aprobadas = []  
+  asignaturas_perdidas = []  
+
+  for asignatura in asignaturas:
+    while True:
+      try:
+        nota = float(input(f"Nota que saco para {asignatura}: "))
+        if 0.0 <= nota <= 5.0:
+          notas_asignaturas.append((asignatura, nota))  
+          break  
+        else:
+          print("La nota debe estar entre 0 y 5.")
+      except ValueError:
+        print("Por favor, ingrese una nota válida.")
+
+  for asignatura, nota in notas_asignaturas:
+    if nota >= 3:
+      asignaturas_aprobadas.append(asignatura)
+    else:
+      asignaturas_perdidas.append(asignatura)
+
+  print("Las materias que aprobaste son:", ", ".join(asignaturas_aprobadas))
+  
+  if asignaturas_perdidas:
+    print("Las materias que perdiste son:", ", ".join(asignaturas_perdidas))
+  else:
+    print("No perdiste ninguna materia. ¡Felicidades!")
+
+notas()
+
+
+
+
+'''
+#LISTAS5
+def letras():
+  alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  for i in range(len(alfabeto), 1, -1):
+    if i % 3 == 0:
+      alfabeto.pop(i-1)
+  print(*alfabeto, sep=', ')
+
+letras()'''
+
+  
